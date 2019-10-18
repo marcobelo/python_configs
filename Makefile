@@ -1,8 +1,14 @@
-clean:
-	find . -name "*.pyc" -exec rm -rf {} \;
-	rm -rf *.log
+# ? use filename + "_" + command
+# * example: $ prepare_dev
 
-prepare:
-	python3 -m venv venv
-	. venv/bin/activate && pip install -r requirements/dev.txt
-	
+include makes/cmd.mk
+# [clean]
+
+include makes/prepare.mk
+# [dev, prod]
+
+include makes/django.mk
+# [runserver, startapp app=name]
+
+include makes/git.mk
+# [push]

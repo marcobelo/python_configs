@@ -7,6 +7,7 @@
 timestamp=$(date +%s)
 cd ./python_configs
 rm -rf .git
+rm -rf README.md
 test -d "../.old/" || mkdir "../.old/"
 mkdir ../.old/python_configs_$timestamp/
 echo "Python Configs 1.0.0"
@@ -31,3 +32,4 @@ rm -rf install.sh
 rm -rf python_configs/
 
 echo "Thank you for using my configs, feel free to make a pull request with cool aditions."
+echo ""
