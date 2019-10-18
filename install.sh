@@ -21,8 +21,9 @@ done
 echo "Moving folders to your project root folder"
 for directory in $(ls -d */)
 do
-    test -d "../$directory" && mv -rf "../$directory" "../.old/python_configs_$timestamp/"
-    mv -rf $directory ../
+    test -d "../$directory" && cp -rf "../$directory" "../.old/python_configs_$timestamp/"
+    rm -rf ../$directory
+    cp -rf $directory ../
     echo "Directory ${directory} moved"
 done
 
