@@ -14,15 +14,15 @@ echo "Moving files to your project root folder:"
 for file in $(ls -Ap | grep -v /)
 do
     test -f "../$file" && mv "../$file" "../.old/python_configs_$timestamp/"
-    cp $file ../
+    mv $file ../
     echo "File ${file} moved"
 done
 
 echo "Moving folders to your project root folder"
 for directory in $(ls -d */)
 do
-    test -d "../$directory" && cp -rf "../$directory" "../.old/python_configs_$timestamp/"
-    cp -rf $directory ../
+    test -d "../$directory" && mv -rf "../$directory" "../.old/python_configs_$timestamp/"
+    mv -rf $directory ../
     echo "Directory ${directory} moved"
 done
 
