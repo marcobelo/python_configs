@@ -28,6 +28,10 @@ do
 done
 
 cd ..
+
+[ "$(ls -A .old/python_configs_$timestamp)" ] && echo "Backuping old settings" || rm -rf .old/python_configs_$timestamp
+[ "$(ls -A .old)" ] && echo "Backup is on .old/ folder" || rm -rf .old
+
 rm -rf install.sh python_configs/
 
 echo "Thank you for using my configs, feel free to make a pull request with cool aditions."
