@@ -6,7 +6,7 @@
 
 timestamp=$(date +%s)
 cd ./python_configs
-rm -rf .git README.md
+rm -rf .git README.md tests
 test -d "../.old/" || mkdir "../.old/"
 mkdir ../.old/python_configs_$timestamp/
 echo "Python Configs 1.0.0"
